@@ -11,7 +11,7 @@ const routes: Array<RouteRecordRaw> = [
     component: () => import ('../views/MainNavigation/Other.vue')
   },
   {
-    path: '/submodule/',
+    path: '/submodule/', // <-- submodule with its own router-outlet
     component: () => import ('../views/SubModuleWithMenu/SideMenu.vue'),
     children: [
       {
