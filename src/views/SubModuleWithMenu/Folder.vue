@@ -20,14 +20,19 @@
         <strong class="capitalize">{{ $route.params.id }}</strong>
         <p>Explore <a target="_blank" rel="noopener noreferrer" href="https://ionicframework.com/docs/components">UI Components</a></p>
       </div>
+
+        <ion-button router-link="/" router-direction="back">
+          Back To Main Navigation (back animation)
+        </ion-button>
     </ion-content>
   </ion-page>
 </template>
 
 <script lang="ts">
-import { IonButtons, IonContent, IonHeader, IonMenuButton, IonPage, IonTitle, IonToolbar } from '@ionic/vue';
+import { IonButtons, IonContent, IonHeader, IonMenuButton, IonPage, IonTitle, IonToolbar, IonButton } from '@ionic/vue';
+import { defineComponent } from '@vue/runtime-core';
 
-export default {
+export default defineComponent({
   name: 'Folder',
   components: {
     IonButtons,
@@ -36,9 +41,10 @@ export default {
     IonMenuButton,
     IonPage,
     IonTitle,
-    IonToolbar
+    IonToolbar,
+    IonButton
   }
-}
+})
 </script>
 
 <style scoped>

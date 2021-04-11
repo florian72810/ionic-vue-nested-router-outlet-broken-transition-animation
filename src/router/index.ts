@@ -3,12 +3,30 @@ import { RouteRecordRaw } from 'vue-router';
 
 const routes: Array<RouteRecordRaw> = [
   {
-    path: '',
-    redirect: '/folder/Inbox'
+    path: '/main',
+    component: () => import ('../views/MainNavigation/Main.vue')
   },
   {
-    path: '/folder/:id',
-    component: () => import ('../views/Folder.vue')
+    path: '/other',
+    component: () => import ('../views/MainNavigation/Other.vue')
+  },
+  {
+    path: '/submodule/',
+    component: () => import ('../views/SubModuleWithMenu/SideMenu.vue'),
+    children: [
+      {
+        path: '',
+        redirect: '/submodule/Inbox'
+      },
+      {
+        path: ':id',
+        component: () => import ('../views/SubModuleWithMenu/Folder.vue')
+      }
+    ]
+  },
+  {
+    path: '',
+    redirect: '/main'
   }
 ]
 
